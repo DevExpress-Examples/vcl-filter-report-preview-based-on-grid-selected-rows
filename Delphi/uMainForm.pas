@@ -52,7 +52,6 @@ type
     NWindMemDataConnection: TdxReportDataSetJSONConnection;
     NWindMemDataConnectionItem1: TdxReportDataSetCollectionItem;
     procedure btnPreviewClick(Sender: TObject);
-    procedure btnDesignClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -66,23 +65,12 @@ implementation
 
 {$R *.dfm}
 
-procedure TMainForm.btnDesignClick(Sender: TObject);
-begin
-  dxReport1.ShowDesigner;
-end;
-
 procedure TMainForm.btnPreviewClick(Sender: TObject);
 var
   i: Integer;
   ProductIDs: TStringList;
   RowIndex: Integer;
 begin
-  if (dxReport1.ReportName = '')  then
-  begin
-    ShowMessage('Report is not specified');
-    Exit;
-  end;
-
   ProductIDs := TStringList.Create;
   try
     for i := 0 to gvProducts.Controller.SelectedRowCount - 1 do

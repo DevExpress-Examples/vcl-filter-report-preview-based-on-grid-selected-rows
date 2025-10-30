@@ -59,12 +59,6 @@ __fastcall TMainForm::TMainForm(TComponent* Owner)
 
 void __fastcall TMainForm::btnPreviewClick(TObject *Sender)
 {
-	if (dxReport1->ReportName == "")
-	{
-		ShowMessage("Report is not specified");
-		return;
-	}
-
 	TStringList *ProductIDs = new TStringList();
 	try
 	{
