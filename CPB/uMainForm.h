@@ -28,9 +28,6 @@
 #include "cxNavigator.hpp"
 #include "cxStyles.hpp"
 #include "dxDateRanges.hpp"
-#include "dxReport.Backend.hpp"
-#include "dxReport.ConnectionString.JSON.DB.hpp"
-#include "dxReport.ConnectionString.JSON.hpp"
 #include "dxReport.hpp"
 #include "dxScrollbarAnnotations.hpp"
 #include <Data.DB.hpp>
@@ -38,12 +35,15 @@
 #include "dxmdaset.hpp"
 #include "dxShellDialogs.hpp"
 #include <Vcl.Dialogs.hpp>
-#include "dxReport.ConnectionString.SQL.hpp"
 #include "dxCore.h"
 #include "dxLayoutContainer.hpp"
 #include "dxLayoutControl.hpp"
 #include "dxLayoutControlAdapters.hpp"
 #include "dxSkinsForm.hpp"
+#include "dxBackend.ConnectionString.JSON.DataSet.hpp"
+#include "dxBackend.ConnectionString.JSON.hpp"
+#include "dxBackend.ConnectionString.SQL.hpp"
+#include "dxBackend.hpp"
 //---------------------------------------------------------------------------
 class TMainForm : public TForm
 {
@@ -67,10 +67,10 @@ __published:	// IDE-managed Components
 	TdxLayoutItem *dxLayoutItem1;
 	TdxLayoutGroup *dxLayoutGroup3;
 	TdxReport *dxReport1;
-	TdxReportDataConnectionManager *dxReportDataConnectionManager;
-	TdxReportDatabaseSQLConnection *ReportsNWindConnectionString;
-	TdxReportDataSetJSONConnection *NWindMemDataConnection;
-	TdxReportDataSetCollectionItem *NWindMemDataConnectionItem1;
+	TdxBackendDataConnectionManager *dxReportDataConnectionManager;
+	TdxBackendDatabaseSQLConnection *ReportsNWindConnectionString;
+	TdxBackendDataSetJSONConnection *NWindMemDataConnection;
+	TdxBackendDataSetCollectionItem *NWindMemDataConnectionItem1;
 	TdxSkinController *dxSkinController1;
 	TDataSource *DataSource1;
 	TdxMemData *mdProducts;

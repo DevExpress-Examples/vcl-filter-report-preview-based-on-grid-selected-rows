@@ -1,8 +1,8 @@
 object MainForm: TMainForm
   Left = 0
   Top = 0
-  Width = 657
-  Height = 464
+  Width = 667
+  Height = 496
   AutoScroll = True
   AutoSize = True
   Caption = 'Product List Report'
@@ -374,20 +374,21 @@ object MainForm: TMainForm
         'N0ZWQ9InRydWUiIE5vZGVUeXBlPSJQcm9wZXJ0eSIgLz48L05vZGU+PC9Ob2RlPj' +
         'wvU2NoZW1hPjwvSnNvbkRhdGFTb3VyY2U+" />  </ComponentStorage></Xtr' +
         'aReportsLayoutSerializer>')
+    Parameters = <>
     Left = 40
     Top = 192
   end
-  object dxReportDataConnectionManager: TdxReportDataConnectionManager
+  object dxReportDataConnectionManager: TdxBackendDataConnectionManager
     Left = 40
     Top = 144
-    object ReportsNWindConnectionString: TdxReportDatabaseSQLConnection
+    object ReportsNWindConnectionString: TdxBackendDatabaseSQLConnection
       DisplayName = 'NWindConnectionString'
       ConnectionString = 
         'XpoProvider=SQLite; Data Source=|DataDirectory|\..\..\..\nwind.d' +
         'b; Mode=ReadOnly'
     end
-    object NWindMemDataConnection: TdxReportDataSetJSONConnection
-      object NWindMemDataConnectionItem1: TdxReportDataSetCollectionItem
+    object NWindMemDataConnection: TdxBackendDataSetJSONConnection
+      object NWindMemDataConnectionItem1: TdxBackendDataSetCollectionItem
         DataSet = mdProducts
         DataSetAlias = 'Products'
       end
