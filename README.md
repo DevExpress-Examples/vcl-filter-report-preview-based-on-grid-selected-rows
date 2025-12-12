@@ -11,7 +11,12 @@ Source data is stored in a memory-based dataset ([TdxMemData](https://docs.devex
 
 Run the sample app and check any records in a table:
 
+![Data Record Selection](/vcl-reports-selected-grid-records.png)
+
 Click the **Preview Report** button to display a report containing all selected records in the [Report Viewer](https://docs.devexpress.com/XtraReports/401850/web-reporting/web-document-viewer) dialog.
+
+![Selected Records in a Sample Report](/vcl-reports-sample-report-with-selected-records.png)
+
 <!-- feedback -->
 ## Does this example address your development requirements/objectives?
 
