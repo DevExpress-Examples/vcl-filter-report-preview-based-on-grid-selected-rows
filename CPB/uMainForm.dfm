@@ -1,41 +1,62 @@
 object MainForm: TMainForm
   Left = 0
   Top = 0
+  Margins.Left = 6
+  Margins.Top = 6
+  Margins.Right = 6
+  Margins.Bottom = 6
   AutoSize = True
   Caption = 'Product List Report'
-  ClientHeight = 425
-  ClientWidth = 641
+  ClientHeight = 850
+  ClientWidth = 1282
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = -12
+  Font.Height = -24
   Font.Name = 'Segoe UI'
   Font.Style = []
-  TextHeight = 15
+  PixelsPerInch = 192
+  TextHeight = 32
   object dxLayoutControl1: TdxLayoutControl
     Left = 0
     Top = 0
-    Width = 641
-    Height = 425
+    Width = 1282
+    Height = 850
+    Margins.Left = 6
+    Margins.Top = 6
+    Margins.Right = 6
+    Margins.Bottom = 6
     TabOrder = 0
     AutoSize = True
     object btnPreview: TcxButton
-      Left = 12
-      Top = 24
-      Width = 557
-      Height = 25
+      Left = 25
+      Top = 44
+      Width = 1114
+      Height = 50
+      Margins.Left = 6
+      Margins.Top = 6
+      Margins.Right = 6
+      Margins.Bottom = 6
       Caption = 'Preview Report'
+      OptionsImage.Spacing = 8
       TabOrder = 0
       OnClick = btnPreviewClick
     end
     object cxGrid1: TcxGrid
-      Left = 12
-      Top = 56
-      Width = 557
-      Height = 345
+      Left = 25
+      Top = 108
+      Width = 1114
+      Height = 690
+      Margins.Left = 6
+      Margins.Top = 6
+      Margins.Right = 6
+      Margins.Bottom = 6
       TabOrder = 1
       object gvProducts: TcxGridDBTableView
         DataController.DataSource = DataSource1
+        FilterRow.SeparatorWidth = 12
+        FixedDataRows.SeparatorWidth = 12
+        NewItemRow.SeparatorWidth = 12
         OptionsData.CancelOnExit = False
         OptionsData.Deleting = False
         OptionsData.DeletingConfirmation = False
@@ -43,31 +64,42 @@ object MainForm: TMainForm
         OptionsData.Inserting = False
         OptionsSelection.MultiSelect = True
         OptionsSelection.CheckBoxVisibility = [cbvDataRow]
+        OptionsView.NavigatorOffset = 100
         OptionsView.ColumnAutoWidth = True
+        OptionsView.FixedColumnSeparatorWidth = 4
         OptionsView.GroupByBox = False
+        Preview.LeftIndent = 40
+        Preview.RightIndent = 10
+        RowLayout.MinValueWidth = 160
         object gvProductsProductID: TcxGridDBColumn
           DataBinding.FieldName = 'ProductID'
           Visible = False
+          MinWidth = 40
         end
         object gvProductsProductName: TcxGridDBColumn
           DataBinding.FieldName = 'ProductName'
-          Width = 150
+          MinWidth = 40
+          Width = 300
         end
         object gvProductsCategoryName: TcxGridDBColumn
           DataBinding.FieldName = 'CategoryName'
-          Width = 136
+          MinWidth = 40
+          Width = 272
         end
         object gvProductsQuantityPerUnit: TcxGridDBColumn
           DataBinding.FieldName = 'QuantityPerUnit'
-          Width = 123
+          MinWidth = 40
+          Width = 246
         end
         object gvProductsUnitsInStock: TcxGridDBColumn
           DataBinding.FieldName = 'UnitsInStock'
-          Width = 122
+          MinWidth = 40
+          Width = 244
         end
         object gvProductsCategoryID: TcxGridDBColumn
           DataBinding.FieldName = 'CategoryID'
           Visible = False
+          MinWidth = 40
         end
       end
       object cxGrid1Level1: TcxGridLevel
@@ -86,8 +118,10 @@ object MainForm: TMainForm
       CaptionOptions.Text = 'btnViewReport'
       CaptionOptions.Visible = False
       Control = btnPreview
-      ControlOptions.OriginalHeight = 25
-      ControlOptions.OriginalWidth = 193
+      ControlOptions.MinHeight = 40
+      ControlOptions.MinWidth = 40
+      ControlOptions.OriginalHeight = 50
+      ControlOptions.OriginalWidth = 386
       ControlOptions.ShowBorder = False
       Index = 0
     end
@@ -99,6 +133,8 @@ object MainForm: TMainForm
       Parent = dxLayoutGroup3
       CaptionOptions.Text = 'New Group'
       CaptionOptions.Visible = False
+      ButtonOptions.DefaultHeight = 32
+      ButtonOptions.DefaultWidth = 32
       ShowBorder = False
       Index = 0
     end
@@ -106,6 +142,8 @@ object MainForm: TMainForm
       Parent = dxLayoutGroup3
       CaptionOptions.Text = 'New Group'
       CaptionOptions.Visible = False
+      ButtonOptions.DefaultHeight = 32
+      ButtonOptions.DefaultWidth = 32
       ShowBorder = False
       Index = 1
     end
@@ -115,14 +153,18 @@ object MainForm: TMainForm
       CaptionOptions.Text = 'cxGrid1'
       CaptionOptions.Visible = False
       Control = cxGrid1
-      ControlOptions.OriginalHeight = 345
-      ControlOptions.OriginalWidth = 557
+      ControlOptions.MinHeight = 40
+      ControlOptions.MinWidth = 40
+      ControlOptions.OriginalHeight = 690
+      ControlOptions.OriginalWidth = 1114
       ControlOptions.ShowBorder = False
       Index = 1
     end
     object dxLayoutGroup3: TdxLayoutGroup
       Parent = dxLayoutControl1Group_Root
       CaptionOptions.Text = 'New Group'
+      ButtonOptions.DefaultHeight = 32
+      ButtonOptions.DefaultWidth = 32
       ItemIndex = 1
       ShowBorder = False
       Index = 0
@@ -373,20 +415,15 @@ object MainForm: TMainForm
         'N0ZWQ9InRydWUiIE5vZGVUeXBlPSJQcm9wZXJ0eSIgLz48L05vZGU+PC9Ob2RlPj' +
         'wvU2NoZW1hPjwvSnNvbkRhdGFTb3VyY2U+" />  </ComponentStorage></Xtr' +
         'aReportsLayoutSerializer>')
+    Parameters = <>
     Left = 40
     Top = 192
   end
-  object dxReportDataConnectionManager: TdxReportDataConnectionManager
+  object dxBackendDataConnectionManager: TdxBackendDataConnectionManager
     Left = 40
     Top = 144
-    object ReportsNWindConnectionString: TdxReportDatabaseSQLConnection
-      DisplayName = 'NWindConnectionString'
-      ConnectionString = 
-        'XpoProvider=SQLite; Data Source=|DataDirectory|\..\..\..\nwind.d' +
-        'b; Mode=ReadOnly'
-    end
-    object NWindMemDataConnection: TdxReportDataSetJSONConnection
-      object NWindMemDataConnectionItem1: TdxReportDataSetCollectionItem
+    object NWindMemDataConnection: TdxBackendDataSetJSONConnection
+      object NWindMemDataConnectionItem1: TdxBackendDataSetCollectionItem
         DataSet = mdProducts
         DataSetAlias = 'Products'
       end
