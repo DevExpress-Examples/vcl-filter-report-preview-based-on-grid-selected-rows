@@ -6,25 +6,23 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxClasses, dxReport, cxGraphics,
   cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus,  cxButtons,
-  cxControls, cxStyles, cxCustomData, cxFilter, cxData,
+  dxReport.Backend, cxControls, cxStyles, cxCustomData, cxFilter, cxData,
   cxDataStorage, cxEdit, cxNavigator, dxDateRanges, dxScrollbarAnnotations,
   Data.DB, cxDBData, cxGridLevel, cxGridCustomView, cxGridCustomTableView,
   cxGridTableView, cxGridDBTableView, cxGrid, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client,
-  Vcl.StdCtrls, dxmdaset, dxShellDialogs,
-  dxLayoutControlAdapters, dxLayoutContainer,
+  FireDAC.Comp.Client, dxReport.ConnectionString.JSON.DB,
+  dxReport.ConnectionString.JSON, Vcl.StdCtrls, dxmdaset, dxShellDialogs,
+  dxReport.ConnectionString.SQL, dxLayoutControlAdapters, dxLayoutContainer,
   dxLayoutControl, dxCore, dxSkinsForm, System.ImageList, Vcl.ImgList,
   cxImageList, 
-  dxLayoutcxEditAdapters, cxContainer, cxTextEdit,
-  dxBackend.ConnectionString.JSON.DataSet, dxBackend.ConnectionString.JSON,
-  dxBackend, dxBackend.ConnectionString.SQL;
+  dxLayoutcxEditAdapters, cxContainer, cxTextEdit;
 
 type
   TMainForm = class(TForm)
     dxReport1: TdxReport;
     btnPreview: TcxButton;
-    dxBackendDataConnectionManager: TdxBackendDataConnectionManager;
-    ReportsNWindConnectionString: TdxBackendDatabaseSQLConnection;
+    dxReportDataConnectionManager: TdxReportDataConnectionManager;
+    ReportsNWindConnectionString: TdxReportDatabaseSQLConnection;
     dxLayoutControl1Group_Root: TdxLayoutGroup;
     dxLayoutControl1: TdxLayoutControl;
     liPreview: TdxLayoutItem;
@@ -51,8 +49,8 @@ type
     mdProductsUnitsInStock: TSmallintField;
     mdProductsCategoryID: TIntegerField;
     mdProductsCategoryName: TWideStringField;
-    NWindMemDataConnection: TdxBackendDataSetJSONConnection;
-    NWindMemDataConnectionItem1: TdxBackendDataSetCollectionItem;
+    NWindMemDataConnection: TdxReportDataSetJSONConnection;
+    NWindMemDataConnectionItem1: TdxReportDataSetCollectionItem;
     procedure btnPreviewClick(Sender: TObject);
   private
     { Private declarations }

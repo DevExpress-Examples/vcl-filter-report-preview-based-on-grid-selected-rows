@@ -374,21 +374,20 @@ object MainForm: TMainForm
         'N0ZWQ9InRydWUiIE5vZGVUeXBlPSJQcm9wZXJ0eSIgLz48L05vZGU+PC9Ob2RlPj' +
         'wvU2NoZW1hPjwvSnNvbkRhdGFTb3VyY2U+" />  </ComponentStorage></Xtr' +
         'aReportsLayoutSerializer>')
-    Parameters = <>
     Left = 40
     Top = 192
   end
-  object dxBackendDataConnectionManager: TdxBackendDataConnectionManager
+  object dxReportDataConnectionManager: TdxReportDataConnectionManager
     Left = 40
     Top = 144
-    object ReportsNWindConnectionString: TdxBackendDatabaseSQLConnection
+    object ReportsNWindConnectionString: TdxReportDatabaseSQLConnection
       DisplayName = 'NWindConnectionString'
       ConnectionString = 
         'XpoProvider=SQLite; Data Source=|DataDirectory|\..\..\..\nwind.d' +
         'b; Mode=ReadOnly'
     end
-    object NWindMemDataConnection: TdxBackendDataSetJSONConnection
-      object NWindMemDataConnectionItem1: TdxBackendDataSetCollectionItem
+    object NWindMemDataConnection: TdxReportDataSetJSONConnection
+      object NWindMemDataConnectionItem1: TdxReportDataSetCollectionItem
         DataSet = mdProducts
         DataSetAlias = 'Products'
       end
