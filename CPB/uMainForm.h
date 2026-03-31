@@ -68,11 +68,10 @@ __published:	// IDE-managed Components
 	TdxLayoutGroup *dxLayoutGroup3;
 	TdxReport *dxReport1;
 	TdxBackendDataConnectionManager *dxReportDataConnectionManager;
-	TdxBackendDatabaseSQLConnection *ReportsNWindConnectionString;
 	TdxBackendDataSetJSONConnection *NWindMemDataConnection;
 	TdxBackendDataSetCollectionItem *NWindMemDataConnectionItem1;
 	TdxSkinController *dxSkinController1;
-	TDataSource *DataSource1;
+	TDataSource *dsProducts;
 	TdxMemData *mdProducts;
 	TIntegerField *mdProductsProductID;
 	TWideStringField *mdProductsProductName;
