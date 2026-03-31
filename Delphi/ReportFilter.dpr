@@ -10,6 +10,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  Application.Title := 'DevExpress Example - Filter Data Records in a Report';
   Application.CreateForm(TMainForm, MainForm);
   Application.Run;
 end.
