@@ -2,7 +2,7 @@ object MainForm: TMainForm
   Left = 0
   Top = 0
   AutoSize = True
-  Caption = 'Product List Report'
+  Caption = 'DevExpress Example - Filter Data Records in a Report'
   ClientHeight = 425
   ClientWidth = 641
   Color = clBtnFace
@@ -51,6 +51,8 @@ object MainForm: TMainForm
         end
         object gvProductsProductName: TcxGridDBColumn
           DataBinding.FieldName = 'ProductName'
+          SortIndex = 0
+          SortOrder = soAscending
           Width = 150
         end
         object gvProductsCategoryName: TcxGridDBColumn
@@ -130,6 +132,8 @@ object MainForm: TMainForm
   end
   object dxReport1: TdxReport
     ReportName = 'Product List Report'
+    Left = 40
+    Top = 192
     Layout.Strings = (
       
         '<?xml version="1.0" encoding="utf-8"?><XtraReportsLayoutSerializ' +
@@ -373,9 +377,6 @@ object MainForm: TMainForm
         'N0ZWQ9InRydWUiIE5vZGVUeXBlPSJQcm9wZXJ0eSIgLz48L05vZGU+PC9Ob2RlPj' +
         'wvU2NoZW1hPjwvSnNvbkRhdGFTb3VyY2U+" />  </ComponentStorage></Xtr' +
         'aReportsLayoutSerializer>')
-    Parameters = <>
-    Left = 40
-    Top = 192
   end
   object dxReportDataConnectionManager: TdxBackendDataConnectionManager
     Left = 40
@@ -394,6 +395,7 @@ object MainForm: TMainForm
     end
   end
   object dxSkinController1: TdxSkinController
+    NativeStyle = False
     SkinName = 'WXI'
     Left = 88
     Top = 144
