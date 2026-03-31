@@ -12,6 +12,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 	{
 		Application->Initialize();
 		Application->MainFormOnTaskBar = true;
+		Application->Title = "DevExpress Example - Filter Data Records in a Report";
 		Application->CreateForm(__classid(TMainForm), &MainForm);
 		Application->Run();
 	}
