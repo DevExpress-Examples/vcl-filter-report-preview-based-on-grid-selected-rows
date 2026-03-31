@@ -22,7 +22,7 @@ object MainForm: TMainForm
     AutoSize = True
     object btnPreview: TcxButton
       Left = 12
-      Top = 24
+      Top = 12
       Width = 557
       Height = 25
       Caption = 'Preview Report'
@@ -31,12 +31,12 @@ object MainForm: TMainForm
     end
     object cxGrid1: TcxGrid
       Left = 12
-      Top = 56
+      Top = 44
       Width = 557
       Height = 345
       TabOrder = 1
       object gvProducts: TcxGridDBTableView
-        DataController.DataSource = DataSource1
+        DataController.DataSource = dsProducts
         OptionsData.CancelOnExit = False
         OptionsData.Deleting = False
         OptionsData.DeletingConfirmation = False
@@ -85,12 +85,12 @@ object MainForm: TMainForm
       Index = -1
     end
     object liPreview: TdxLayoutItem
-      Parent = dxLayoutGroup2
+      Parent = dxButtons
       CaptionOptions.Text = 'btnViewReport'
       CaptionOptions.Visible = False
       Control = btnPreview
       ControlOptions.OriginalHeight = 25
-      ControlOptions.OriginalWidth = 193
+      ControlOptions.OriginalWidth = 557
       ControlOptions.ShowBorder = False
       Index = 0
     end
@@ -98,21 +98,14 @@ object MainForm: TMainForm
       CaptionOptions.Text = 'Label'
       Index = -1
     end
-    object dxLayoutGroup1: TdxLayoutGroup
-      Parent = dxLayoutGroup3
+    object dxButtons: TdxLayoutGroup
+      Parent = dxLayoutControl1Group_Root
       CaptionOptions.Text = 'New Group'
       CaptionOptions.Visible = False
       ShowBorder = False
       Index = 0
     end
-    object dxLayoutGroup2: TdxLayoutGroup
-      Parent = dxLayoutGroup3
-      CaptionOptions.Text = 'New Group'
-      CaptionOptions.Visible = False
-      ShowBorder = False
-      Index = 1
-    end
-    object dxLayoutItem1: TdxLayoutItem
+    object dxGrid: TdxLayoutItem
       Parent = dxLayoutControl1Group_Root
       AlignHorz = ahLeft
       CaptionOptions.Text = 'cxGrid1'
@@ -122,13 +115,6 @@ object MainForm: TMainForm
       ControlOptions.OriginalWidth = 557
       ControlOptions.ShowBorder = False
       Index = 1
-    end
-    object dxLayoutGroup3: TdxLayoutGroup
-      Parent = dxLayoutControl1Group_Root
-      CaptionOptions.Text = 'New Group'
-      ItemIndex = 1
-      ShowBorder = False
-      Index = 0
     end
   end
   object dxReport1: TdxReport
@@ -382,15 +368,9 @@ object MainForm: TMainForm
   object dxReportDataConnectionManager: TdxBackendDataConnectionManager
     Left = 40
     Top = 144
-    object ReportsNWindConnectionString: TdxBackendDatabaseSQLConnection
-      DisplayName = 'NWindConnectionString'
-      ConnectionString = 
-        'XpoProvider=SQLite; Data Source=|DataDirectory|\..\..\..\nwind.d' +
-        'b; Mode=ReadOnly'
-    end
     object NWindMemDataConnection: TdxBackendDataSetJSONConnection
       object NWindMemDataConnectionItem1: TdxBackendDataSetCollectionItem
-        DataSet = mdProducts
+        DataSource = dsProducts
         DataSetAlias = 'Products'
       end
     end
@@ -401,7 +381,7 @@ object MainForm: TMainForm
     Left = 88
     Top = 144
   end
-  object DataSource1: TDataSource
+  object dsProducts: TDataSource
     DataSet = mdProducts
     Left = 88
     Top = 192
