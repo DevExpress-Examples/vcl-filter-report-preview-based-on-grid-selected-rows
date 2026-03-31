@@ -38,7 +38,7 @@ Click the **Preview Report** button to display a report containing all selected 
 -   [Store report layouts in REPX files at design-time][reports-design-time-store]
 -   API reference:
     -   [TdxReport]
-    -   [TdxReport.ReportName] (internal report name)
+    -   [TdxReport.ReportName] (internal report name that is not included in the layout)
     -   [TdxReport.Layout] (an XML-based layout template that can be stored in a BLOB data field)
     -   [TdxReport.ShowViewer]
     -   [TdxMemData] (DevExpress in-memory dataset implementation)
