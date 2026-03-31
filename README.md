@@ -23,11 +23,11 @@ inherited from the [TDataSet] class shipped with the standard VCL library).
 
 Run the sample app and check any records in a table:
 
-![Data Record Selection](/vcl-reports-selected-grid-records.png)
+![Data Record Selection](./images/vcl-reports-selected-grid-records.png)
 
 Click the **Preview Report** button to display a report containing all selected records in the [Report Viewer][report-viewer] dialog.
 
-![Selected Records in a Sample Report](/vcl-reports-sample-report-with-selected-records.png)
+![Selected Records in a Sample Report](./images/vcl-reports-sample-report-with-selected-records.png)
 
 
 ## Documentation
