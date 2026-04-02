@@ -365,10 +365,4 @@ object MainForm: TMainForm
         'wvU2NoZW1hPjwvSnNvbkRhdGFTb3VyY2U+" />  </ComponentStorage></Xtr' +
         'aReportsLayoutSerializer>')
   end
-  object dxSkinController1: TdxSkinController
-    NativeStyle = False
-    SkinName = 'WXI'
-    Left = 88
-    Top = 144
-  end
 end
