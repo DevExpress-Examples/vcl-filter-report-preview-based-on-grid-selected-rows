@@ -199,12 +199,20 @@ $(PostBuildEvent)]]></PostBuildEvent>
             <BuildOrder>1</BuildOrder>
             <PCH>true</PCH>
         </PCHCompile>
+        <CppCompile Include="uData.cpp">
+            <Form>DataModule1</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+            <DependentOn>uData.h</DependentOn>
+            <BuildOrder>4</BuildOrder>
+        </CppCompile>
         <CppCompile Include="uMainForm.cpp">
             <Form>MainForm</Form>
             <FormType>dfm</FormType>
             <DependentOn>uMainForm.h</DependentOn>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
+        <FormResources Include="uData.dfm"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

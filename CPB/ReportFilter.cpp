@@ -3,8 +3,10 @@
 #include <vcl.h>
 #pragma hdrstop
 #include <tchar.h>
-//---------------------------------------------------------------------------
 USEFORM("uMainForm.cpp", MainForm);
+USEFORM("uData.cpp", DataModule1);
+
+//---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -13,6 +15,7 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 		Application->Initialize();
 		Application->MainFormOnTaskBar = true;
 		Application->Title = "DevExpress Example - Filter Data Records in a Report";
+		Application->CreateForm(__classid(TDataModule1), &DataModule1);
 		Application->CreateForm(__classid(TMainForm), &MainForm);
 		Application->Run();
 	}
