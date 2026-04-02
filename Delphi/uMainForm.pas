@@ -26,7 +26,6 @@ type
     dxLayoutControl1Group_Root: TdxLayoutGroup;
     dxLayoutControl1: TdxLayoutControl;
     liPreview: TdxLayoutItem;
-    dxSkinController1: TdxSkinController;
     dxLayoutLabeledItem1: TdxLayoutLabeledItem;
     dxButtons: TdxLayoutGroup;
     gvProducts: TcxGridDBTableView;
