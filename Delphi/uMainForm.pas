@@ -23,7 +23,6 @@ type
   TMainForm = class(TForm)
     dxReport1: TdxReport;
     btnPreview: TcxButton;
-    dxReportDataConnectionManager: TdxBackendDataConnectionManager;
     dxLayoutControl1Group_Root: TdxLayoutGroup;
     dxLayoutControl1: TdxLayoutControl;
     liPreview: TdxLayoutItem;
@@ -34,22 +33,12 @@ type
     cxGrid1Level1: TcxGridLevel;
     cxGrid1: TcxGrid;
     dxGrid: TdxLayoutItem;
-    dsProducts: TDataSource;
     gvProductsProductID: TcxGridDBColumn;
     gvProductsProductName: TcxGridDBColumn;
     gvProductsQuantityPerUnit: TcxGridDBColumn;
     gvProductsUnitsInStock: TcxGridDBColumn;
     gvProductsCategoryID: TcxGridDBColumn;
     gvProductsCategoryName: TcxGridDBColumn;
-    mdProducts: TdxMemData;
-    mdProductsProductID: TIntegerField;
-    mdProductsProductName: TWideStringField;
-    mdProductsQuantityPerUnit: TWideStringField;
-    mdProductsUnitsInStock: TSmallintField;
-    mdProductsCategoryID: TIntegerField;
-    mdProductsCategoryName: TWideStringField;
-    NWindMemDataConnection: TdxBackendDataSetJSONConnection;
-    NWindMemDataConnectionItem1: TdxBackendDataSetCollectionItem;
     procedure btnPreviewClick(Sender: TObject);
   private
     { Private declarations }
@@ -63,6 +52,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses uData;
 
 procedure TMainForm.btnPreviewClick(Sender: TObject);
 var
