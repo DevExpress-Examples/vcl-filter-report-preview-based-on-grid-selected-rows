@@ -44,6 +44,7 @@
 #include "dxBackend.ConnectionString.JSON.hpp"
 #include "dxBackend.ConnectionString.SQL.hpp"
 #include "dxBackend.hpp"
+#include "uData.h"
 //---------------------------------------------------------------------------
 class TMainForm : public TForm
 {
@@ -62,23 +63,8 @@ __published:	// IDE-managed Components
 	TdxLayoutGroup *dxLayoutControl1Group_Root;
 	TdxLayoutItem *liPreview;
 	TdxLayoutLabeledItem *dxLayoutLabeledItem1;
-	TdxLayoutGroup *dxLayoutGroup1;
-	TdxLayoutGroup *dxLayoutGroup2;
-	TdxLayoutItem *dxLayoutItem1;
-	TdxLayoutGroup *dxLayoutGroup3;
 	TdxReport *dxReport1;
-	TdxBackendDataConnectionManager *dxReportDataConnectionManager;
-	TdxBackendDataSetJSONConnection *NWindMemDataConnection;
-	TdxBackendDataSetCollectionItem *NWindMemDataConnectionItem1;
 	TdxSkinController *dxSkinController1;
-	TDataSource *dsProducts;
-	TdxMemData *mdProducts;
-	TIntegerField *mdProductsProductID;
-	TWideStringField *mdProductsProductName;
-	TWideStringField *mdProductsQuantityPerUnit;
-	TSmallintField *mdProductsUnitsInStock;
-	TIntegerField *mdProductsCategoryID;
-	TWideStringField *mdProductsCategoryName;
 	void __fastcall btnPreviewClick(TObject *Sender);
 private:	// User declarations
 protected:
