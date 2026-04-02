@@ -64,7 +64,6 @@ __published:	// IDE-managed Components
 	TdxLayoutItem *liPreview;
 	TdxLayoutLabeledItem *dxLayoutLabeledItem1;
 	TdxReport *dxReport1;
-	TdxSkinController *dxSkinController1;
 	void __fastcall btnPreviewClick(TObject *Sender);
 private:	// User declarations
 protected:
