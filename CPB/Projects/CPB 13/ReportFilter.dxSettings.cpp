@@ -17,17 +17,21 @@
 #pragma hdrstop
 #pragma package(smart_init)
 
+#include "System.SysUtils.hpp"
 #include "Vcl.Themes.hpp"
 #include "cxLookAndFeels.hpp"
 #include "dxSkinsCore.hpp"
 #include "dxSkinsForm.hpp"
 #include "dxSkinWXI.hpp"
 
+#pragma link "System.SysUtils"
 #pragma link "Vcl.Themes"
 #pragma link "cxLookAndFeels"
 #pragma link "dxSkinsCore"
 #pragma link "dxSkinsForm"
 #pragma link "dxSkinWXI"
+
+TProcedure FPrevInitProc = nullptr;
 
 void LoadAppearanceToRootLookAndFeel(TcxRootLookAndFeel* ARoot) {
   ARoot->Kind = lfUltraFlat;
@@ -41,7 +45,7 @@ void LoadAppearanceToRootLookAndFeel(TcxRootLookAndFeel* ARoot) {
   ARoot->SkinPaletteName = "Default";
   ARoot->ShowFormShadow = bDefault;
   ARoot->UseSkins = true;
-  ARoot->UseImageSet = Cxlookandfeels::imsDefault;
+  ARoot->UseImageSet = TdxSkinImageSet::imsDefault;
   ARoot->UseSkinsInPopupMenus = true;
   ARoot->UseGlobalSkin = true;
 }
@@ -63,7 +67,14 @@ void LoadAppearance() {
   TdxVisualRefinements::LightStyleMode = lsmOnlyBorders;
 }
 
-void initialization(void) {
+void Initialize() {
+  if (FPrevInitProc)
+    FPrevInitProc();
   LoadAppearance();
+}
+
+void initialization(void) {
+  FPrevInitProc = reinterpret_cast<TProcedure>(InitProc);
+  InitProc = reinterpret_cast<void*>(&Initialize);
 }
 #pragma startup initialization 200

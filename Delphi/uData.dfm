@@ -312,7 +312,7 @@ object DataModule1: TDataModule1
     Top = 192
     object NWindMemDataConnection: TdxBackendDataSetJSONConnection
       object NWindMemDataConnectionItem1: TdxBackendDataSetCollectionItem
-        DataSet = mdProducts
+        DataSource = dsProducts
         DataSetAlias = 'Products'
       end
     end

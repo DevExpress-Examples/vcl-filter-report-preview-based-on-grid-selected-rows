@@ -1,7 +1,6 @@
 object DataModule1: TDataModule1
-  Height = 1080
-  Width = 1440
-  PixelsPerInch = 144
+  Height = 720
+  Width = 960
   object mdProducts: TdxMemData
     Active = True
     Indexes = <>
@@ -279,8 +278,8 @@ object DataModule1: TDataModule1
       0073000120000102000000010A00000043006F006E00640069006D0065006E00
       74007300}
     SortOptions = []
-    Left = 56
-    Top = 72
+    Left = 37
+    Top = 48
     object mdProductsProductID: TIntegerField
       FieldName = 'ProductID'
     end
@@ -304,12 +303,12 @@ object DataModule1: TDataModule1
   end
   object dsProducts: TDataSource
     DataSet = mdProducts
-    Left = 192
-    Top = 72
+    Left = 128
+    Top = 48
   end
   object dxReportDataConnectionManager: TdxBackendDataConnectionManager
-    Left = 328
-    Top = 80
+    Left = 219
+    Top = 53
     object NWindMemDataConnection: TdxBackendDataSetJSONConnection
       object NWindMemDataConnectionItem1: TdxBackendDataSetCollectionItem
         DataSource = dsProducts

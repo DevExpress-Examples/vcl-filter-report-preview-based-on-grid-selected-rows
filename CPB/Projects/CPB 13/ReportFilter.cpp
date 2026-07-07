@@ -3,8 +3,8 @@
 #include <vcl.h>
 #pragma hdrstop
 #include <tchar.h>
-USEFORM("uMainForm.cpp", MainForm);
-USEFORM("uData.cpp", DataModule1);
+USEFORM("..\..\Sources\uMainForm.cpp", MainForm);
+USEFORM("..\..\Sources\uData.cpp", DataModule1); /* TDataModule: File Type */
 
 //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
